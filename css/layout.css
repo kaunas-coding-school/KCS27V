@@ -31,6 +31,17 @@ footer {
 
 /* Extra maži įrenginiai (telefonai, 600px ir žemiau) */
 @media only screen and (max-width: 600px) {
+    body{
+        grid-template-areas:
+            'h'
+            'm'
+            'f';
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+    aside {
+        display: none;
+    }
 }
 
 /* Maži įrenginiai (statmenos planšetės, ar gulsti telefonai 600px ir aukščiau) */
@@ -39,6 +50,14 @@ footer {
 
 /* Vidutiniai įrenginiai (gulsčios planšetės ar maži laptopai, 768px ir aukščiau) */
 @media only screen and (min-width: 768px) {
+    body{
+        grid-template-areas:
+            'h h'
+            'm a'
+            'f f';
+        grid-template-columns: auto 265px;
+        grid-template-rows: auto;
+    }
 }
 
 /* Dideli įrenginiai (laptopai, staliniai PC, 992px ir aukščiau) */

@@ -4,3 +4,22 @@ main img {
     border: 1px solid darkgray;
     padding: 5px;
 }
+
+/* Animacijos kodas */
+@keyframes mano_animacija {
+    0% {background-color: red;}
+    25% {background-color: blue;}
+    50% {background-color: green;}
+    75% {background-color: white;}
+    100% {background-color: red;}
+}
+
+/* Elementas kuriam taikysime animacija */
+#elementas {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: mano_animacija;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
