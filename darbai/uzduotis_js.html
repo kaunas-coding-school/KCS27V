@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Kampu sumos</h1>
+
+<p id="ats"></p>
+
+<script>
+    let n1 = 5;
+    let n2 = 6;
+
+    S1 = (n1 - 2) * 180;
+    S2 = (n2 - 2) * 180;
+
+    let atsakymas = n1 + ' kampu suma: ' + S1;
+    atsakymas += '<br>' + n2 + ' kampu suma: ' + S2;
+    atsakymas += '<br> Visu daugiakampiu suma: ' + (S2 + S1);
+
+    document.getElementById('ats').innerHTML = atsakymas;
+
+</script>
+
+</body>
+</html>
