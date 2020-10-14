@@ -4,7 +4,7 @@ let ats_elem3 = document.getElementById('ats3');
 
 let i = h = 1;
 
-while (i < 10){
+while (i < 10) {
     ats_elem.innerHTML += '<br>' + i;
     i++;
 }
@@ -17,3 +17,16 @@ do {
     ats_elem3.innerHTML += '<br>' + h;
     h++;
 } while (h < 10)
+
+//               0        1         2
+let masyva = ['jonas', 'petras', 'kazys'];
+console.log(masyvas[2]); // kazys
+
+let masyvas2 = {
+    pirmas: 'jonas',
+    trecias: 'petras',
+    antras: 'kazys'
+};
+console.log(masyvas2['trecias']); // petras
+console.log(masyvas2.antras); // kazys
+

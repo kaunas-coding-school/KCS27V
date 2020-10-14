@@ -15,9 +15,9 @@
 <header>
     <img src="/img/logo.png" alt="logo">
     <nav>
-        <a href="/">Apie</a>
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/kontaktai.html">Kontaktai</a>
+        <a onclick="pakesitiPuslapi(this, 'about')"class="active" >Apie</a>
+        <a onclick="pakesitiPuslapi(this, 'portfolio')">Portfolio</a>
+        <a onclick="pakesitiPuslapi(this, 'contacts')">Kontaktai</a>
     </nav>
 </header>
 <aside>
@@ -27,15 +27,23 @@
     </section>
 </aside>
 <main>
-    <h1>Apie mane</h1>
-    <img src="/img/profilis.jpg" alt="Tautvydas Dulskis">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eos laboriosam ratione saepe! Autem delectus
-    distinctio, dolor dolorem ex ipsa labore quae quia tenetur velit! Ad adipisci cum eos ipsum.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eos laboriosam ratione saepe! Autem delectus
-    distinctio, dolor dolorem ex ipsa labore quae quia tenetur velit! Ad adipisci cum eos ipsum.
-    <section class="portfolio_item" id="elementas">
-        <h4>Mano naujausias darbas:</h4>
-        <img src="https://picsum.photos/240/240" alt="Darbas">
+    <section id="about">
+        <h1>Apie mane</h1>
+        <img src="/img/profilis.jpg" alt="Tautvydas Dulskis">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eos laboriosam ratione saepe! Autem delectus
+        distinctio, dolor dolorem ex ipsa labore quae quia tenetur velit! Ad adipisci cum eos ipsum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eos laboriosam ratione saepe! Autem delectus
+        distinctio, dolor dolorem ex ipsa labore quae quia tenetur velit! Ad adipisci cum eos ipsum.
+        <section class="portfolio_item" id="elementas">
+            <h4>Mano naujausias darbas:</h4>
+            <img src="https://picsum.photos/240/240" alt="Darbas">
+        </section>
+    </section>
+    <section id="portfolio">
+        <h1>Portfolio</h1>
+    </section>
+    <section id="contacts">
+        <h1>Kontaktai</h1>
     </section>
 </main>
 <footer>
@@ -45,6 +53,6 @@
 </footer>
 
 <script src="js/teswt.js"></script>
-
+<script src="js/navigacija.js"></script>
 </body>
 </html>
