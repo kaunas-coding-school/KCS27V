@@ -5,6 +5,5 @@ $(function(){
     });
 
 
-    $('#forma').load('kontaktu_forma.html');
 
 });

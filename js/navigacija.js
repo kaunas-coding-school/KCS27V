@@ -32,5 +32,5 @@ $(function(){
         $(el).addClass(klasesvardas);
     }
 
-    pakeistiTaba('#about');
+    pakeistiTaba('#contacts');
 });
