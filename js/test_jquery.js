@@ -1,7 +1,10 @@
 $(function(){
 
-    let bodis = $('body');
-    // document.getElementsByTagName('body').style.backgroundColor = 'red';
-    bodis.css('background-color','red');
+    $('header > img').click(function(){
+        $('aside > section > img').toggle();
+    });
+
+
+    $('#forma').load('kontaktu_forma.html');
 
 });
