@@ -1,6 +1,7 @@
 $(function () {
     $('#forma').load('kontaktu_forma.html', function () {
         $('#forma [type="button"]').click(function (event) {
+console.log('veikiu-2');
             event.preventDefault();
             var form = $('#kontaktuForma')[0];
             var data = new FormData(form);
