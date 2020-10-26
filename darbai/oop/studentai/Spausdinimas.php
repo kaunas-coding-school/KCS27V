@@ -4,17 +4,17 @@ class Spausdinimas
 {
     public static function spausdintiHtml(array $arr): void
     {
-        echo '<div>';
+        echo '<ul>';
         /** @var Studentas $studentas */
         foreach ($arr as $studentas) {
-            echo "<div>
+            echo "<li>
                     Studento vardas: {$studentas->getName()}<br>
                     Studento pavarde: {$studentas->getSurename()}<br>
                     Studento grupe: {$studentas->getGroup()}<br>
                     Studento kodas: {$studentas->getCode()}<br>
-            </div>";
+            </li>";
         }
-        echo '<\div>';
+        echo '<\ul>';
     }
 
     public static function spausdintiTxt(array $arr): void
