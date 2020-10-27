@@ -1,5 +1,7 @@
 <?php
 
+namespace KCS;
+
 class Spausdinimas
 {
     public static function spausdintiHtml(array $arr): void

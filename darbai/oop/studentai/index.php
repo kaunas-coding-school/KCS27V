@@ -1,9 +1,20 @@
 <?php
 
-require_once 'Studentas.php';
-require_once 'Spausdinimas.php';
-require_once 'Grupe.php';
-require_once 'Helper.php';
+use KCS\Grupe;
+use KCS\Helper;
+use KCS\Spausdinimas;
+use KCS\Studentas;
+
+require_once __DIR__.'/../../../vendor/autoload.php';
+
+$log = new Monolog\Logger('Studentas');
+$log->pushHandler(
+    new Monolog\Handler\StreamHandler(
+        __DIR__.'/../../../logs/studentasApp.log',
+        Monolog\Logger::INFO
+    )
+);
+$log->info('Aplikacija pradejo darba');
 
 $studentaiM = [];
 $studentaiV = [];
@@ -24,7 +35,7 @@ foreach ($studentuDuomenys as $studentoDuomenys) {
     $studentas->setGroup($grupe);
     $studentas->setCode($studentoDuomenys['code']);
 
-    if(Helper::arVyras($studentas)){
+    if (Helper::arVyras($studentas)) {
         $studentaiV[] = $studentas;
     } else {
         $studentaiM[] = $studentas;

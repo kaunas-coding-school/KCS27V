@@ -1,4 +1,6 @@
 <?php
+    require_once __DIR__ . '/vendor/autoload.php';
+
     $apieManeAntraste  = '<h1>Apie mane</h1>';
     $kontaktaiAntraste = '<h1>Kontaktai</h1>';
 ?>

@@ -1,5 +1,7 @@
 <?php
 
+namespace KCS;
+
 class Studentas
 {
     private string $name;

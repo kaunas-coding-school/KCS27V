@@ -1,5 +1,9 @@
 <?php
 
+namespace KCS;
+
+use DateTime;
+
 class Helper
 {
     public static function arVyras(Studentas $studentas)
