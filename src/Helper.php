@@ -76,9 +76,9 @@ class Helper
             $pavarde = $item['surename'];
             $elpastas = "<a href='mailto:{$item['email']}'>{$item['email']}</a>";
             $veiskmai = "
-                    <a href='delete.php?id={$item['id']}'>[ SALINTI ]</a>
-                    <a href='view.php?id={$item['id']}'>[ ZIURETI ]</a>
-                    <a href='edit.php?id={$item['id']}'>[ REDAGUOTI ]</a>
+                    <a href='?id={$item['id']}&action=Delete'>[ SALINTI ]</a>
+                    <a href='?id={$item['id']}&action=View'>[ ZIURETI ]</a>
+                    <a href='?id={$item['id']}&action=Edit'>[ REDAGUOTI ]</a>
             ";
             $row = "<td>$vardas</td><td>$pavarde</td><td>$elpastas</td><td>$veiskmai</td>";
             echo '<tr>'.$row.'</tr>';
