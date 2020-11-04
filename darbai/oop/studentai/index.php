@@ -19,6 +19,22 @@ $log->info('Aplikacija pradejo darba');
 try {
     $studentaiM = [];
     $studentaiV = [];
+
+    $conn = new PDO('mysql:host=db;dbname=kcs_db', 'devuser', 'devpass');
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $conn->prepare('SELECT first_name as name, last_name as surename FROM person');
+    $stmt->execute();
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $studentuDuomenys = [];
+
+    foreach ($stmt->fetchAll() as $stud) {
+        $stud['groupId'] = random_int(1, 10);
+        $stud['code'] = random_int(3, 4) . 901212 . str_pad(random_int(1, 9999), 4, '0', STR_PAD_LEFT);
+
+        $studentuDuomenys[] = $stud;
+    }
+    /*
     $studentuDuomenys = [
         ['name' => 'Jonas', 'surename' => 'Jonaitis', 'groupId' => 777, 'code' => 39012120001],
         ['name' => 'Petras', 'surename' => 'petraitis', 'groupId' => 777, 'code' => 52010120001],
@@ -26,6 +42,7 @@ try {
         ['name' => 'Zita', 'surename' => 'Zitaite', 'groupId' => 777, 'code' => 61512120001],
         ['name' => 'Kestas', 'surename' => 'Kestaitis', 'groupId' => 777, 'code' => 35712121402],
     ];
+    */
 
     foreach ($studentuDuomenys as $studentoDuomenys) {
         $studentas = new Studentas();
@@ -46,11 +63,10 @@ try {
     Spausdinimas::spausdintiHtml($studentaiV);
     echo "Moterys:";
     Spausdinimas::spausdintiHtml($studentaiM);
+//
+//    var_dump(Helper::rastiJauniausiaStudenta($studentaiV));
+//    var_dump(Helper::rastiVyriausiaStudenta($studentaiV));
 
-    throw new \Exception('klaida');
-
-    var_dump(Helper::rastiJauniausiaStudenta($studentaiV));
-    var_dump(Helper::rastiVyriausiaStudenta($studentaiV));
 } catch (\Exception $exception) {
     echo "\n\nOii... nutiko klaida. Prasom bandyti dar karta.";
     $log->warning($exception->getMessage());
