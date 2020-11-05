@@ -32,6 +32,14 @@ switch ($action){
         $delObj = new Update($conn);
         $delObj->updatePerson($_POST);
         break;
+    case 'Create':
+        $delObj = new Edit($conn);
+        $delObj->viewCreateForm();
+        break;
+    case 'Store':
+        $delObj = new Update($conn);
+        $delObj->createPerson($_POST);
+        break;
     default:
         $studentai = (new ListPersons($conn))->visi();
         Helper::spausdinti($studentai, $format);

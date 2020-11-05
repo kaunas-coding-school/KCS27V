@@ -32,4 +32,19 @@ class Edit
             [<a href='./'>ATGAL</a>]
         ";
     }
+
+    public function viewCreateForm(): void
+    {
+        echo "
+            <form action='./?action=Store' method='post'>
+                <input type='hidden' name='id' value='' />
+                Vardas: <input type='text' name='first_name' value='' /><br>
+                Pavarde: <input type='text' name='last_name' value='' /><br>
+                El. pastas: <input type='text' name='email' value='' /><br>
+                Tel. nr.: <input type='text' name='phone' value='' /><br>
+                <input type='submit' value='Saugoti'>
+            </form>
+            [<a href='./'>ATGAL</a>]
+        ";
+    }
 }

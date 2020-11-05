@@ -47,6 +47,7 @@
     </section>
     <section id="portfolio">
         <h1>Portfolio</h1>
+        <div id="persons">Not found...</div>
     </section>
     <section id="contacts">
         <?php echo $kontaktaiAntraste; ?>
@@ -65,6 +66,7 @@
 <script src="js/navigacija.js"></script>
 <script src="js/test_jquery.js"></script>
 <script src="js/formSubmit.js"></script>
+<script src="js/persons.js"></script>
 
 </body>
 </html>

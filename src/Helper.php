@@ -90,8 +90,10 @@ class Helper
 
     private static function formatAsHtml(array $items): string
     {
-        $html = '<table>
+        $html = '<hr>[ <a href="./?action=Create">+ ADD new person</a> ]<hr>';
+        $html .= '<table>
                 <th>
+                    <td>ID</td>
                     <td>Vardas</td>
                     <td>Pavarde</td>
                     <td>El-pastas</td>
@@ -107,10 +109,11 @@ class Helper
                     <a href='?id={$item['id']}&action=View'>[ ZIURETI ]</a>
                     <a href='?id={$item['id']}&action=Edit'>[ REDAGUOTI ]</a>
             ";
-            $row = "<td>$vardas</td><td>$pavarde</td><td>$elpastas</td><td>$veiskmai</td>";
+            $row = "<td>{$item['id']}</td><td>$vardas</td><td>$pavarde</td><td>$elpastas</td><td>$veiskmai</td>";
             $html .= '<tr>'.$row.'</tr>';
         }
         $html .= '</table>';
+
         return $html;
 }
 }
