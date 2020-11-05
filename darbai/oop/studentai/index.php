@@ -13,6 +13,7 @@ $conn = new PDO('mysql:host=db;dbname=kcs_db', 'devuser', 'devpass');
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $action = $_GET['action'] ?? null;
+$format = $_GET['format'] ?? 'html';
 
 switch ($action){
     case 'Delete':
@@ -33,5 +34,5 @@ switch ($action){
         break;
     default:
         $studentai = (new ListPersons($conn))->visi();
-        Helper::spausdintiLenteleje($studentai);
+        Helper::spausdinti($studentai, $format);
 }

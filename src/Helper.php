@@ -61,9 +61,36 @@ class Helper
         return (new DateTime('now'))->diff($data)->days;
     }
 
-    public static function spausdintiLenteleje(array $items): void
+    public static function spausdinti(array $items, string $format = null): void
     {
-        echo '<table>
+        switch ($format) {
+            case 'json':
+                echo json_encode($items);
+                break;
+            case 'csv':
+                self::formatAsCsv($items);
+                break;
+            case 'html':
+            default:
+                echo self::formatAsHtml($items);
+        }
+    }
+
+    private static function formatAsCsv($array, $filename = "export.csv", $delimiter=";"): void
+    {
+        $f = fopen('php://memory', 'w');
+        foreach ($array as $line) {
+            fputcsv($f, $line, $delimiter);
+        }
+        fseek($f, 0);
+        header('Content-Type: application/csv');
+        header('Content-Disposition: attachment; filename="'.$filename.'";');
+        fpassthru($f);
+    }
+
+    private static function formatAsHtml(array $items): string
+    {
+        $html = '<table>
                 <th>
                     <td>Vardas</td>
                     <td>Pavarde</td>
@@ -81,8 +108,9 @@ class Helper
                     <a href='?id={$item['id']}&action=Edit'>[ REDAGUOTI ]</a>
             ";
             $row = "<td>$vardas</td><td>$pavarde</td><td>$elpastas</td><td>$veiskmai</td>";
-            echo '<tr>'.$row.'</tr>';
+            $html .= '<tr>'.$row.'</tr>';
         }
-        echo '</table>';
-    }
+        $html .= '</table>';
+        return $html;
+}
 }
